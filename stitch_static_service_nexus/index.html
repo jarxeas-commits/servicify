@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servicify Website Hub</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fcf8ff;
+      color: #1b1b24;
+    }
+    .card-shadow {
+      box-shadow: 0px 20px 60px rgba(52, 52, 76, 0.08);
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-background">
+  <div class="max-w-6xl mx-auto px-6 py-10">
+    <header class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-10">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-bold text-primary">Servicify Website Hub</h1>
+        <p class="mt-3 text-base md:text-lg text-on-surface-variant max-w-2xl">Browse the pages created for the Servicify service marketplace and preview each section of the experience in one place.</p>
+      </div>
+      <a href="#site-pages" class="inline-flex items-center gap-2 rounded-full bg-primary-container text-on-primary px-6 py-3 font-semibold hover:bg-primary transition">Explore pages<span class="material-symbols-outlined">arrow_forward</span></a>
+    </header>
+
+    <section id="site-pages" class="grid gap-6 md:grid-cols-2">
+      <article class="rounded-3xl border border-surface-container-highest bg-surface-container-low p-6 card-shadow hover:-translate-y-1 transition">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h2 class="text-2xl font-semibold text-on-surface">Homepage</h2>
+            <p class="mt-2 text-sm text-on-surface-variant">Main landing page with hero, service search, and feature highlights.</p>
+          </div>
+          <span class="material-symbols-outlined text-primary">home</span>
+        </div>
+        <a href="homepage/code.html" class="inline-flex items-center gap-2 mt-4 text-primary font-semibold hover:underline">Open Homepage<span class="material-symbols-outlined">open_in_new</span></a>
+      </article>
+
+      <article class="rounded-3xl border border-surface-container-highest bg-surface-container-low p-6 card-shadow hover:-translate-y-1 transition">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h2 class="text-2xl font-semibold text-on-surface">Advertisement Board</h2>
+            <p class="mt-2 text-sm text-on-surface-variant">Browse filtered service listings with search and category navigation.</p>
+          </div>
+          <span class="material-symbols-outlined text-primary">view_list</span>
+        </div>
+        <a href="advertisement_board/code.html" class="inline-flex items-center gap-2 mt-4 text-primary font-semibold hover:underline">Open Board<span class="material-symbols-outlined">open_in_new</span></a>
+      </article>
+
+      <article class="rounded-3xl border border-surface-container-highest bg-surface-container-low p-6 card-shadow hover:-translate-y-1 transition">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h2 class="text-2xl font-semibold text-on-surface">Service Detail</h2>
+            <p class="mt-2 text-sm text-on-surface-variant">Detailed service page with booking, provider info, and availability.</p>
+          </div>
+          <span class="material-symbols-outlined text-primary">fact_check</span>
+        </div>
+        <a href="service_detail_page/code.html" class="inline-flex items-center gap-2 mt-4 text-primary font-semibold hover:underline">Open Detail<span class="material-symbols-outlined">open_in_new</span></a>
+      </article>
+
+      <article class="rounded-3xl border border-surface-container-highest bg-surface-container-low p-6 card-shadow hover:-translate-y-1 transition">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h2 class="text-2xl font-semibold text-on-surface">Messages</h2>
+            <p class="mt-2 text-sm text-on-surface-variant">User messaging interface and chat layout for customer communication.</p>
+          </div>
+          <span class="material-symbols-outlined text-primary">chat</span>
+        </div>
+        <a href="messages_page/code.html" class="inline-flex items-center gap-2 mt-4 text-primary font-semibold hover:underline">Open Messages<span class="material-symbols-outlined">open_in_new</span></a>
+      </article>
+
+      <article class="rounded-3xl border border-surface-container-highest bg-surface-container-low p-6 card-shadow hover:-translate-y-1 transition">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h2 class="text-2xl font-semibold text-on-surface">User Dashboard</h2>
+            <p class="mt-2 text-sm text-on-surface-variant">Dashboard overview with stats, activity summary, and quick actions.</p>
+          </div>
+          <span class="material-symbols-outlined text-primary">dashboard</span>
+        </div>
+        <a href="user_dashboard/code.html" class="inline-flex items-center gap-2 mt-4 text-primary font-semibold hover:underline">Open Dashboard<span class="material-symbols-outlined">open_in_new</span></a>
+      </article>
+
+      <article class="rounded-3xl border border-surface-container-highest bg-surface-container-low p-6 card-shadow hover:-translate-y-1 transition">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h2 class="text-2xl font-semibold text-on-surface">Design System</h2>
+            <p class="mt-2 text-sm text-on-surface-variant">Brand and design guidelines for the professional service exchange UI.</p>
+          </div>
+          <span class="material-symbols-outlined text-primary">palette</span>
+        </div>
+        <a href="professional_service_exchange/index.html" class="inline-flex items-center gap-2 mt-4 text-primary font-semibold hover:underline">Open Design System<span class="material-symbols-outlined">open_in_new</span></a>
+      </article>
+    </section>
+
+    <footer class="mt-14 border-t border-surface-container-highest pt-8 text-sm text-on-surface-variant">
+      <p>Servicify static website hub generated from the attached folder.</p>
+      <p class="mt-2">Open any page above to preview the full layout.</p>
+    </footer>
+  </div>
+</body>
+</html>

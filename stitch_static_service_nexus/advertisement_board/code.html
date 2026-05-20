@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Advertisement Board - Servicify</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#4edea3",
+                        "surface-container-low": "#f5f2ff",
+                        "secondary-container": "#6cf8bb",
+                        "background": "#fcf8ff",
+                        "on-primary-container": "#dad7ff",
+                        "on-secondary-container": "#00714d",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "surface-tint": "#4d44e3",
+                        "on-secondary-fixed": "#002113",
+                        "on-tertiary-fixed": "#351000",
+                        "surface-variant": "#e4e1ee",
+                        "on-surface": "#1b1b24",
+                        "inverse-primary": "#c3c0ff",
+                        "tertiary-fixed-dim": "#ffb695",
+                        "inverse-on-surface": "#f3effc",
+                        "error-container": "#ffdad6",
+                        "on-background": "#1b1b24",
+                        "tertiary": "#7e3000",
+                        "on-primary-fixed": "#0f0069",
+                        "on-surface-variant": "#464555",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#006c49",
+                        "surface-container-high": "#eae6f4",
+                        "primary-container": "#4f46e5",
+                        "on-tertiary-container": "#ffd2be",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#005236",
+                        "surface-dim": "#dcd8e5",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e4e1ee",
+                        "primary-fixed": "#e2dfff",
+                        "outline": "#777587",
+                        "tertiary-container": "#a44100",
+                        "secondary-fixed": "#6ffbbe",
+                        "tertiary-fixed": "#ffdbcc",
+                        "surface": "#fcf8ff",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "on-primary": "#ffffff",
+                        "primary": "#3525cd",
+                        "inverse-surface": "#302f39",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "outline-variant": "#c7c4d8",
+                        "surface-bright": "#fcf8ff",
+                        "surface-container": "#f0ecf9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "container-max": "1280px",
+                        "xs": "4px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-h3": ["Inter"],
+                        "headline-h2": ["Inter"],
+                        "label-xs": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-h1-mobile": ["Inter"],
+                        "headline-h1": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-h2": ["30px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "label-xs": ["12px", {"lineHeight": "1", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-h1-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-h1": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .card-shadow {
+            box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.05), 0px 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface-container-low font-body-md text-body-md font-label-sm text-label-sm docked full-width top-0 sticky z-50 border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none">
+<div class="max-w-container-max mx-auto px-lg flex items-center justify-between h-16">
+<div class="flex items-center gap-lg">
+<a class="font-headline-h3 text-headline-h3 font-bold text-primary dark:text-primary-fixed" href="#">Servicify</a>
+<div class="hidden md:flex relative ml-4">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-lowest border border-outline-variant rounded-full text-label-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none w-64 transition-all" placeholder="Search services..." type="text"/>
+</div>
+</div>
+<nav class="hidden md:flex items-center gap-gutter h-full">
+<a class="text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 font-bold h-full flex items-center mt-1 cursor-pointer active:scale-95 transition-transform" href="#">Browse Services</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:bg-surface-container-high dark:hover:bg-surface-container-highest duration-200 px-3 py-2 rounded-md h-full flex items-center cursor-pointer active:scale-95" href="#">Offer Service</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:bg-surface-container-high dark:hover:bg-surface-container-highest duration-200 px-3 py-2 rounded-md h-full flex items-center cursor-pointer active:scale-95" href="#">Request Service</a>
+</nav>
+<div class="flex items-center gap-md">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors cursor-pointer active:scale-95">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors cursor-pointer active:scale-95">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</button>
+<button class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant cursor-pointer active:scale-95 ml-2">
+<img alt="User profile dropdown" class="w-full h-full object-cover" data-alt="A close-up portrait of a professional individual smiling warmly, suited for a professional service marketplace profile picture. The lighting is soft and flattering, highlighting a clean, modern aesthetic with a high-key light mode background. The subject conveys trust and reliability, essential for a corporate service platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVKVpjcLo-8_PNICODbfrNZ82iiQ8RB3840GhU2tTFYUWQodf3ypE24uFuBWGANZTqXW6HD196JuYpWsbtsXb54aJIKSPOVTa74bayMQf3ECuzJHRI6STDUIy_x3ENityyjxr6c8mMTApZSn0BqILXyZzN5E4qkKtWRx69jn_CcmFlVvGwoqhysi-JQKI4EahoIUnXh04_uJf_dfLZMXuAx6NC83MoWZv6gAz7dYGI-ENUfN1dMJkRDfbtyJ3SoNALINZj_rTFNXY"/>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow max-w-container-max w-full mx-auto px-margin-mobile md:px-lg py-lg md:py-xl grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Sidebar Filters (md: 3 columns) -->
+<aside class="md:col-span-3 hidden md:flex flex-col gap-lg h-fit sticky top-24">
+<div class="bg-surface-container-lowest rounded-xl border border-surface-variant p-md card-shadow">
+<div class="flex items-center justify-between mb-4">
+<h2 class="font-headline-h3 text-body-lg font-semibold text-on-surface">Filters</h2>
+<button class="text-primary font-label-sm text-label-sm hover:underline cursor-pointer">Clear All</button>
+</div>
+<!-- Type Toggle -->
+<div class="mb-6">
+<div class="flex p-1 bg-surface-container-high rounded-lg">
+<button class="flex-1 py-2 text-center rounded-md bg-surface-container-lowest shadow-sm text-primary font-label-sm text-label-sm font-semibold transition-all">Services</button>
+<button class="flex-1 py-2 text-center rounded-md text-on-surface-variant font-label-sm text-label-sm hover:text-on-surface transition-all">Requests</button>
+</div>
+</div>
+<!-- Categories -->
+<div class="mb-6 border-t border-surface-variant pt-4">
+<h3 class="font-label-sm text-label-sm font-semibold text-on-surface-variant mb-3">Category</h3>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input checked="" class="rounded border-outline-variant text-primary focus:ring-primary w-4 h-4 cursor-pointer" type="checkbox"/>
+<span class="font-body-md text-label-sm text-on-surface group-hover:text-primary transition-colors">Home Maintenance</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="rounded border-outline-variant text-primary focus:ring-primary w-4 h-4 cursor-pointer" type="checkbox"/>
+<span class="font-body-md text-label-sm text-on-surface group-hover:text-primary transition-colors">Digital &amp; Tech</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="rounded border-outline-variant text-primary focus:ring-primary w-4 h-4 cursor-pointer" type="checkbox"/>
+<span class="font-body-md text-label-sm text-on-surface group-hover:text-primary transition-colors">Tutoring &amp; Lessons</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="rounded border-outline-variant text-primary focus:ring-primary w-4 h-4 cursor-pointer" type="checkbox"/>
+<span class="font-body-md text-label-sm text-on-surface group-hover:text-primary transition-colors">Event Planning</span>
+</label>
+</div>
+</div>
+<!-- Price Range -->
+<div class="mb-6 border-t border-surface-variant pt-4">
+<h3 class="font-label-sm text-label-sm font-semibold text-on-surface-variant mb-3">Price Range</h3>
+<input class="w-full h-1 bg-surface-variant rounded-lg appearance-none cursor-pointer accent-primary" max="1000" min="0" type="range" value="500"/>
+<div class="flex justify-between mt-2 font-label-xs text-label-xs text-on-surface-variant">
+<span>$0</span>
+<span>$1000+</span>
+</div>
+</div>
+<!-- Location -->
+<div class="border-t border-surface-variant pt-4">
+<h3 class="font-label-sm text-label-sm font-semibold text-on-surface-variant mb-3">Location</h3>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">location_on</span>
+<input class="w-full pl-9 pr-3 py-2 bg-surface-container-lowest border border-outline-variant rounded-lg text-label-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="City or zip code" type="text"/>
+</div>
+</div>
+</div>
+</aside>
+<!-- Listing Feed (md: 9 columns) -->
+<section class="md:col-span-9 flex flex-col gap-lg">
+<!-- Header & Sort -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-surface-variant pb-4">
+<div>
+<h1 class="font-headline-h2 text-headline-h2 text-on-surface">Browse Services</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Showing 124 available services in your area.</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sort by:</span>
+<select class="bg-surface-container-lowest border border-outline-variant rounded-lg px-3 py-1.5 font-label-sm text-label-sm text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none cursor-pointer">
+<option>Recommended</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Highest Rated</option>
+<option>Newest</option>
+</select>
+</div>
+</div>
+<!-- Mobile Filter Toggle (Visible only on small screens) -->
+<button class="md:hidden w-full py-2 bg-surface-container-low border border-surface-variant rounded-lg flex items-center justify-center gap-2 text-primary font-label-sm font-semibold mb-4">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+                Filters &amp; Sort
+            </button>
+<!-- Cards Grid (3 columns on lg, 2 on md, 1 on sm) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-md">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl border border-surface-variant overflow-hidden card-shadow group hover:-translate-y-1 transition-transform duration-300 flex flex-col h-full">
+<div class="relative h-48 w-full overflow-hidden">
+<img alt="Professional cleaning service" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional cleaning service taking place in a bright, modern living room. Sunlight streams through large windows, highlighting clean surfaces and a fresh, hygienic environment. The scene is shot with a high-key light mode aesthetic, utilizing a corporate color palette of crisp whites and subtle blues to convey reliability and thoroughness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0-SEOhw-VxVacHL5xr9DftUMl4lss3ivwAgjLruKAY4RaD2PvrFb9g4SG_oWCWeslAw1ey7DMd7lAh62XGju6rsrmql4jmXMW9nZ5IsLHbgHiWqKW9ocXdz3W0jhD7KkYyqegR1-YorVCQO6bIs6SBm0-LZW6CT5sFLMqB2sSIrrA_zNsrbWwHsyEFEboJwBxgipwq030v0d3TPu55-D9kuNfn-du2_0ZoqLwE_H65aRxoESWPqFMbexX5Hf_aPdIrnMJt5AaG9M"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-1 rounded-md text-on-surface font-label-xs text-label-xs font-semibold shadow-sm">
+                            Home Maintenance
+                        </div>
+<button class="absolute top-3 right-3 p-1.5 bg-surface-container-lowest/90 backdrop-blur-sm rounded-full text-outline hover:text-error transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-h3 text-body-lg font-semibold text-on-surface line-clamp-2">Deep House Cleaning &amp; Organization</h3>
+</div>
+<div class="flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined icon-fill text-[#F59E0B] text-[16px]">star</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">4.9</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">(128 reviews)</span>
+</div>
+<div class="flex items-center gap-2 mb-4">
+<img alt="Provider" class="w-6 h-6 rounded-full" data-alt="A headshot of a friendly female service provider with a welcoming smile. She is dressed in neat, professional attire suited for home services. The background is a clean, neutral white, aligning with the platform's professional, high-trust corporate design language." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh1UcBYPiFxyITleWlMR0TzUnupNqdoHduxBHBUFQ3e1RqDLFxtBrQF0ZPxqDxVMi_o9S5j_nFNkSyWrYkvt4id9pkv0holvFhZB5r9csiXYjhpLvU6ux_yfGMcWKUzOY7Hhe6XirayIm9xG1DVzSObwWQ_IYRQQ47vgzBu-WheiMwu_Qy6WFZJeMrZRzeYgzpfgeh2Rk3e5T78WfuJGIuG_FfgTyoI0qG9hIPiC5UBxXZZFneVAMKyBYM_E4HaxodyFp4mPO7yKI"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Sarah Jenkins</span>
+<span class="material-symbols-outlined text-secondary text-[16px] ml-auto" title="Verified Provider">verified</span>
+</div>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-surface-variant">
+<div>
+<span class="font-label-xs text-label-xs text-on-surface-variant block">Starting at</span>
+<span class="font-headline-h3 text-body-lg font-bold text-on-surface">$120</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span class="font-label-sm text-label-sm">2.4 mi</span>
+</div>
+</div>
+<button class="w-full mt-4 py-2 bg-primary-container text-on-primary rounded-lg font-label-sm text-label-sm font-semibold hover:bg-primary transition-colors cursor-pointer active:scale-[0.98]">View Details</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl border border-surface-variant overflow-hidden card-shadow group hover:-translate-y-1 transition-transform duration-300 flex flex-col h-full">
+<div class="relative h-48 w-full overflow-hidden">
+<img alt="Web development service" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A modern desk setup showing a laptop displaying code, accompanied by a cup of coffee and a notebook. The lighting is soft and natural, emphasizing a clean, organized, and professional digital work environment. The aesthetic is contemporary and reliable, fitting the platform's high-utility focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ9KP5ktVmhIK43WjYOHNs8a0c1fkuhhtGtLkNjME35guOaYQIf-KNpEMXGR5LugiDrfO9QPh_dOrO-pe9RgPWyXHrJJQ2VnBbBL4OsGnMVK0itLg3ZIUtO1os9CMh1-3tBjIZIPObIM9dR7x-idqcGwYtjJpryWi0o1NDcCMecfod0RKgMtOL4eXVun3m19Orpyev0VpvcOu21p2uYcIontMI5FIL0x06zZmXdz9GEH_tKer_1ezVgOSrPA73HvJixSEqSevGYN4"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-1 rounded-md text-on-surface font-label-xs text-label-xs font-semibold shadow-sm">
+                            Digital &amp; Tech
+                        </div>
+<button class="absolute top-3 right-3 p-1.5 bg-surface-container-lowest/90 backdrop-blur-sm rounded-full text-outline hover:text-error transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-h3 text-body-lg font-semibold text-on-surface line-clamp-2">Custom WordPress Website Design</h3>
+</div>
+<div class="flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined icon-fill text-[#F59E0B] text-[16px]">star</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">5.0</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">(45 reviews)</span>
+</div>
+<div class="flex items-center gap-2 mb-4">
+<img alt="Provider" class="w-6 h-6 rounded-full" data-alt="A headshot of a male web developer looking directly at the camera with a confident, approachable expression. He wears casual professional attire. The clean, light-mode background reinforces a sense of trust and effortless competence desired by the service marketplace brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHLRwgT-H8lR9bfqFFnny9O3YCK3e7cMqfPDtPkxN0qtr9dyX7nYZ5iwmU54csbcvG_jXbPr9jd1FhS7N2vA88yAdLGem1Wb1VyCe-nLiCY9DOpb_upntFlmpe4jsbd9OeWCsAceDPe55NHFkWn4LhUo8Y31g1rVvMBy9OYKRWVbmNX8UD5CLGBXzzaNXGhFt7EjtRFTLbRQ5LUtb6Qb6jsRDF-mzLYQadaz3EpIR1pktsVgMZ5jj9-weapmoiCOOUcStx-_7LjD0"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Alex Chen</span>
+<span class="material-symbols-outlined text-secondary text-[16px] ml-auto" title="Verified Provider">verified</span>
+</div>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-surface-variant">
+<div>
+<span class="font-label-xs text-label-xs text-on-surface-variant block">Fixed Price</span>
+<span class="font-headline-h3 text-body-lg font-bold text-on-surface">$500</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">language</span>
+<span class="font-label-sm text-label-sm">Remote</span>
+</div>
+</div>
+<button class="w-full mt-4 py-2 bg-primary-container text-on-primary rounded-lg font-label-sm text-label-sm font-semibold hover:bg-primary transition-colors cursor-pointer active:scale-[0.98]">View Details</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl border border-surface-variant overflow-hidden card-shadow group hover:-translate-y-1 transition-transform duration-300 flex flex-col h-full">
+<div class="relative h-48 w-full overflow-hidden">
+<img alt="Math tutoring" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A tutor and student working together at a bright, sunlit table with books and a tablet. The mood is empowering and focused, reflecting an effective learning environment. The scene employs a bright, neutral color palette to align with the platform's professional and clean light-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCZp3QjfaeYn2LLf3ptSM0oaaef0UMEjiL9BKkfhJxsZWow9HibMPuJlKXM_vUWbi1TOtILOuTExzh50PkWMEByYKPUOmRxSXdNxCuuULjXjbN_RItPgZyRTI7gk1fB8JPiN04e9yWVAo9_K3T6sigpsDzmj4wlGGx05S61zttnD0Mk8iEF9P4iChoUpnIeO_LnpyIxFYy03itnbCZQtLzbQHYII3JGJ5a2OZsILyZYWxOqZCu9Pg9kIIaBPZX6PVVBirOurwX_fQ"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-1 rounded-md text-on-surface font-label-xs text-label-xs font-semibold shadow-sm">
+                            Tutoring &amp; Lessons
+                        </div>
+<button class="absolute top-3 right-3 p-1.5 bg-surface-container-lowest/90 backdrop-blur-sm rounded-full text-error hover:text-error transition-colors shadow-sm">
+<span class="material-symbols-outlined icon-fill text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-h3 text-body-lg font-semibold text-on-surface line-clamp-2">High School Math &amp; Physics Tutoring</h3>
+</div>
+<div class="flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined icon-fill text-[#F59E0B] text-[16px]">star</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">4.8</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">(82 reviews)</span>
+</div>
+<div class="flex items-center gap-2 mb-4">
+<div class="w-6 h-6 rounded-full bg-surface-variant flex items-center justify-center text-on-surface-variant font-label-xs font-bold border border-outline-variant">
+                                MR
+                            </div>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Maria Rodriguez</span>
+</div>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-surface-variant">
+<div>
+<span class="font-label-xs text-label-xs text-on-surface-variant block">Hourly Rate</span>
+<span class="font-headline-h3 text-body-lg font-bold text-on-surface">$45/hr</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span class="font-label-sm text-label-sm">5.1 mi</span>
+</div>
+</div>
+<button class="w-full mt-4 py-2 bg-primary-container text-on-primary rounded-lg font-label-sm text-label-sm font-semibold hover:bg-primary transition-colors cursor-pointer active:scale-[0.98]">View Details</button>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex justify-center mt-lg pt-4 border-t border-surface-variant">
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-lg border border-outline-variant flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors cursor-not-allowed opacity-50">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-lg bg-primary text-on-primary font-label-sm font-semibold flex items-center justify-center">1</button>
+<button class="w-10 h-10 rounded-lg border border-outline-variant flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors font-label-sm font-semibold">2</button>
+<button class="w-10 h-10 rounded-lg border border-outline-variant flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors font-label-sm font-semibold">3</button>
+<span class="w-10 h-10 flex items-center justify-center text-on-surface-variant">...</span>
+<button class="w-10 h-10 rounded-lg border border-outline-variant flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-surface-container-highest font-body-md text-body-md font-label-sm text-label-sm w-full mt-auto">
+<div class="bg-surface-container-high dark:bg-surface-dim h-px w-full"></div>
+<div class="max-w-container-max mx-auto px-lg py-xl grid grid-cols-2 md:grid-cols-4 gap-lg">
+<div>
+<a class="font-headline-h3 text-headline-h3 font-bold text-on-surface dark:text-on-surface-variant block mb-4" href="#">Servicify</a>
+<p class="text-on-surface-variant font-label-sm text-label-sm">Connecting trusted professionals with clients needing reliable services.</p>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm font-bold text-on-surface mb-3">Links</h4>
+<ul class="flex flex-col gap-2">
+<li><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed hover:underline transition-all duration-200" href="#">Categories</a></li>
+<li><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed hover:underline transition-all duration-200" href="#">Company</a></li>
+<li><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed hover:underline transition-all duration-200" href="#">Support</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm font-bold text-on-surface mb-3">Legal</h4>
+<ul class="flex flex-col gap-2">
+<li><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed hover:underline transition-all duration-200" href="#">Safety</a></li>
+<li><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed hover:underline transition-all duration-200" href="#">Privacy</a></li>
+<li><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed hover:underline transition-all duration-200" href="#">Terms</a></li>
+</ul>
+</div>
+<div class="col-span-2 md:col-span-1">
+<p class="text-on-surface-variant font-label-sm text-label-sm mt-4 md:mt-0">© 2024 Servicify Marketplace. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</body></html>
